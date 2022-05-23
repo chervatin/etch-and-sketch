@@ -9,7 +9,19 @@ display: inline-block;
     display: flex;
 }
 
-/*
-.cell:hover {
-    background-color: gold;
-  }
+body {
+    display:flex;
+    flex-direction: column;
+}
+
+button {
+    width: 100px;
+    margin: auto;
+    margin-top: 0.5cm;
+}
+
+#container {
+    margin: auto;
+    margin-top: 0.5cm;
+    border-style: dotted;
+}
