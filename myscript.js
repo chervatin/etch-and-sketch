@@ -1,37 +1,38 @@
 let gridSize = 16;
+buildFunction(gridSize);
+
 
 function myFunction() {
-    var GridSize = prompt ('Enter new grid size:');
-    deleteElements();
-    for(var i = 0; i < GridSize; i++) {
-        var row = document.createElement("div");
-        row.classList.add("row");
-        for(var j = 0; j < GridSize; j++) {
-            var cell = document.createElement("div");
-            cell.id = "cell";
-            cell.addEventListener('mouseover', function(e){
-                e.target.style.backgroundColor = 'black';
-            })
-            row.appendChild(cell);
-        }
-        document.getElementById("container").appendChild(row);
+    var gridSize = prompt ('Enter new grid size (2-100):');
+    while (gridSize > 100 || gridSize < 2){
+    var gridSize = prompt ('Enter new grid size (Please, I said 2-100)');
     }
-    
+    deleteElements();
+    buildFunction(gridSize);
 }
 
-for(var i = 0; i < gridSize; i++) {
+// Funcion constructora de grid //
+
+function buildFunction(gridSize){
+    let size = 432/gridSize;
+    for(var i = 0; i < gridSize; i++) {
     var row = document.createElement("div");
     row.classList.add("row");
     for(var j = 0; j < gridSize; j++) {
         var cell = document.createElement("div");
         cell.id = "cell";
+        cell.style.width = `${size}px`;
+        cell.style.height = `${size}px`;
         cell.addEventListener('mouseover', function(e){
-            e.target.style.backgroundColor = 'black';
+        e.target.style.backgroundColor = 'black';
         })
         row.appendChild(cell);
     }
     document.getElementById("container").appendChild(row);
 }
+}
+
+// Funcion eliminadora de grid anterior //
 
 function deleteElements() {
     var e = document.querySelector("#container")

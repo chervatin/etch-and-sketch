@@ -1,8 +1,10 @@
 #cell {
-width: 25px;
-height: 25px;
 background: white;
 display: inline-block;
+border-style: solid;
+border-width: 1px;
+box-sizing: border-box;
+border-color: rgb(237, 231, 231);
 }
 
 .row {
@@ -23,5 +25,7 @@ button {
 #container {
     margin: auto;
     margin-top: 0.5cm;
-    border-style: dotted;
+    border-style: solid;
+    height: 432px;
+    width: 432px;
 }
