@@ -24,7 +24,8 @@ function buildFunction(gridSize){
         cell.style.width = `${size}px`;
         cell.style.height = `${size}px`;
         cell.addEventListener('mouseover', function(e){
-        e.target.style.backgroundColor = 'black';
+        let randomColor = Math.floor(Math.random()*16777215).toString(16);
+        e.target.style.backgroundColor = "#" + randomColor;
         })
         row.appendChild(cell);
     }
@@ -42,3 +43,4 @@ function deleteElements() {
             child = e.lastElementChild;
     }
 }
+
